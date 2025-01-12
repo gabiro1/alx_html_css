@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="6-styles.css">
+    <link rel="stylesheet" href="holberton-icons.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="home">
+                <nav>
+                <div class="nav">
+                    <div class="log">
+                        <a href="/"><img src="images/logo_headphones.png" alt="logo"></a>
+                    </div>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#what-we-do">What We Do</a></li> 
+                            <li><a href="#results">Our Results</a></li>  
+                            <li><a href="#contactForm">Contact Us</a></li>  
+                        </ul>
+                    </div>
+                    
+                </div>
+                </nav>
+                
+                <div class="content">
+                    <div class="content-text-btn" >  
+                        <h1>What We Do</h1>
+                        <h4>Your Growth, Our Mission</h4>
+                        <button>Call to action</button>
+                        <p>HeadPhone is a digital marketing agency that creates custom strategies to help businesses grow by focusing on key metrics like leads and revenue.
+                             Their award-winning team prioritizes client success as a measure of their performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "What We Do" Section -->
+        <section class="what-we-do" id="what-we-do">
+            <p id="description">HeadPhone is a digital marketing agency helping businesses grow through custom strategies focused on leads and revenue. Since 2005, they’ve served 250+ clients across 30 industries.</p>
+            <div class="features-container">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-brands fa-soundcloud" style="font-size: 2rem; color: #FF6565;"></i> <!-- Custom icon class -->
+                    </div>
+    
+                    <p>Enhance your brand's reach with expert audio marketing strategies.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-clapperboard" style="font-size: 2rem; color: #FF6565;"></i>
+                    </div>
+                   
+                    <p>Engage audiences through compelling video content creation.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-music" style="font-size: 2rem; color: #FF6565;"></i>
+                    </div>
+                    <p>Integrate music-driven campaigns to captivate your target audience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Results Section -->
+<section class="ourResults" id="results">  
+    <div class="content">
+        <p class="description">
+            At HeadPhone, we focus on delivering measurable results that drive business growth and success. Our strategies are designed to achieve tangible outcomes, helping businesses thrive in competitive markets.
+        </p>
+        <div class="results">
+            <!-- Result 1 -->
+            <div class="result-card">
+                <div class="result-content">
+                    <span class="percentage">+15%</span>
+                    <span class="text"> brand awareness</span>
+                </div>
+            </div>
+            <!-- Result 2 -->
+            <div class="result-card">
+                <div class="result-content">
+                    <span class="percentage">+25%</span>
+                    <span class="text">Boost in online engagement</span>
+                </div>
+            </div>
+            <!-- Result 3 -->
+            <div class="result-card">
+                <div class="result-content">
+                    <span class="percentage">+40%</span>
+                    <span class="text">Growth in ROI for clients</span>
+                </div>
+            </div>
+            <!-- Result 4 -->
+            <div class="result-card">
+                <div class="result-content">
+                    <span class="percentage">+60%</span>
+                    <span class="text">Customer retention rates</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Contact Us Section -->
+ <section class="contact-us" id="contactForm">  
+    <div class="contact-content">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST" class="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea  id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-button">Call to Action</button>
+        </form>
+    </div>
+</section>
+
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo_headphones.png" alt="Headphones Logo">
+            </div>            
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; headphones.2020</p>
+        </div>
+    </footer>
+    <script>
+       function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Check if the menu is open
+    if (hamburger.classList.contains('active')) {
+        // If it's open, close the menu
+        hamburger.classList.remove('active');
+        menu.classList.remove('open');
+    } else {
+        // If it's closed, open the menu
+        hamburger.classList.add('active');
+        menu.classList.add('open');
+    }
+}
+
+
+// Close menu when clicking on any close button or menu item
+function closeMenu() {
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Remove the active class for both the menu and the hamburger icon
+    hamburger.classList.remove('active');
+    menu.classList.remove('open');
+}
+
+// Add event listeners to menu links
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default link behavior
+        const targetId = link.getAttribute('href').substring(1); // Get the target section ID
+        const targetElement = document.getElementById(targetId);
+
+        // Smooth scroll to the section if it exists
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close the menu regardless of whether the target section exists
+        closeMenu();
+    });
+});
+
+
+
+
+</script>
+
+    
+</body>
+</html>
