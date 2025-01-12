@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="1-styles.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="home">
+                <nav>
+                <div class="nav">
+                    <div class="log">
+                        <a href="/"><img src="images/logo_headphones.png" alt="logo"></a>
+                    </div>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#what-we-do">What We Do</a></li> 
+                            <li><a href="#results">Our Results</a></li>  
+                            <li><a href="#contactForm">Contact Us</a></li>  
+                        </ul>
+                    </div>
+                    
+                </div>
+                </nav>
+                
+                <div class="content">
+                    <div class="content-text-btn" >  
+                        <h1>What We Do</h1>
+                        <h3>Your Growth, Our Mission</h3>
+                        <button>Call to action</button>
+                        <p>HeadPhone is a digital marketing agency that creates custom strategies to help businesses grow by focusing on key metrics like leads and revenue.
+                             Their award-winning team prioritizes client success as a measure of their performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+       function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Check if the menu is open
+    if (hamburger.classList.contains('active')) {
+        // If it's open, close the menu
+        hamburger.classList.remove('active');
+        menu.classList.remove('open');
+    } else {
+        // If it's closed, open the menu
+        hamburger.classList.add('active');
+        menu.classList.add('open');
+    }
+}
+
+
+// Close menu when clicking on any close button or menu item
+function closeMenu() {
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Remove the active class for both the menu and the hamburger icon
+    hamburger.classList.remove('active');
+    menu.classList.remove('open');
+}
+
+// Add event listeners to menu links
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default link behavior
+        const targetId = link.getAttribute('href').substring(1); // Get the target section ID
+        const targetElement = document.getElementById(targetId);
+
+        // Smooth scroll to the section if it exists
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close the menu regardless of whether the target section exists
+        closeMenu();
+    });
+});
+
+</script>
+
+    
+</body>
+</html>
